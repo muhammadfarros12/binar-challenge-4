@@ -12,7 +12,7 @@ data class NoteEntity(
     @PrimaryKey(autoGenerate = true)
     var id: Int?,
     @ColumnInfo(name = "judul")
-    var judul: String,
+    var judul: String = "",
     @ColumnInfo(name = "catatan")
-    var catatan: String
+    var catatan: String = ""
 ) : Parcelable

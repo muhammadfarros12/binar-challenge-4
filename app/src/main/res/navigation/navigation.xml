@@ -35,8 +35,8 @@
             android:id="@+id/action_noteFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_noteFragment_to_noteAddFragment"
-            app:destination="@id/noteAddFragment" />
+            android:id="@+id/action_noteFragment_to_noteEditFragment"
+            app:destination="@id/noteEditFragment" />
     </fragment>
     <dialog
         android:id="@+id/noteAddFragment"
@@ -47,5 +47,9 @@
         android:id="@+id/noteEditFragment"
         android:name="com.example.noteapp.ui.NoteEditFragment"
         android:label="fragment_note_edit"
-        tools:layout="@layout/fragment_note_edit" />
+        tools:layout="@layout/fragment_note_edit" >
+        <argument
+            android:name="note"
+            app:argType="com.example.noteapp.data.entity.NoteEntity" />
+    </dialog>
 </navigation>
