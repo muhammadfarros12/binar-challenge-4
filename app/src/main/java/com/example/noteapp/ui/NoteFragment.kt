@@ -1,10 +1,12 @@
 package com.example.noteapp.ui
 
+import android.app.ActionBar
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.noteapp.R
@@ -32,6 +34,8 @@ class NoteFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentNoteBinding.inflate(layoutInflater, container, false)
+
+
         return binding.root
     }
 
@@ -39,6 +43,8 @@ class NoteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         sharedPref = SharedPreference(view.context)
         noteDb = NoteDatabase.getInstance(view.context)
+
+        (activity as AppCompatActivity).supportActionBar?.hide()
 
         binding.apply {
             homeToolbar.inflateMenu(R.menu.home_menu)
